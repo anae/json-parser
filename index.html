@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="JSON Parser Ananaba.be - Format, validate and copy JSON instantly."
+  />
+  <title>JSON Parser — Ananaba.be</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <a class="eyebrow toolbox-link" href="https://ananaba.be/applications/" aria-label="Retour à la toolbox Ananaba.be">ANANABA.BE / TOOLBOX</a>
+        <h1>JSON Parser</h1>
+        <p class="subtitle">
+          Colle ton JSON. Il est automatiquement validé et indenté, prêt à être copié.
+        </p>
+      </div>
+
+      <div class="product-badge">Validation instantanée</div>
+    </header>
+
+    <section class="toolbar" aria-label="Actions JSON">
+      <div class="status" id="status">Prêt.</div>
+
+      <div class="toolbar-actions">
+        <label class="indent-control" for="indentSize">
+          Indentation
+
+          <select id="indentSize">
+            <option value="2" selected>2 espaces</option>
+            <option value="4">4 espaces</option>
+            <option value="tab">Tabulation</option>
+          </select>
+        </label>
+
+        <button
+          class="button button-secondary"
+          id="clearBtn"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </section>
+
+    <section class="panels">
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <span class="panel-kicker">INPUT</span>
+            <h2>JSON brut</h2>
+          </div>
+
+          <button
+            class="text-button"
+            id="pasteBtn"
+            type="button"
+          >
+            Paste
+          </button>
+        </div>
+
+        <textarea
+          id="jsonInput"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off"
+          placeholder='{"hello":"world","items":[1,2,3]}'
+          aria-label="JSON brut"
+        ></textarea>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <span class="panel-kicker">OUTPUT</span>
+            <h2>JSON formaté</h2>
+          </div>
+
+          <button
+            class="button button-copy"
+            id="copyBtn"
+            type="button"
+            disabled
+          >
+            Copy
+          </button>
+        </div>
+
+        <pre id="jsonOutput" aria-live="polite"><code>Le JSON formaté apparaîtra ici.</code></pre>
+      </article>
+    </section>
+
+    <footer>
+      Validation, indentation et copie en un geste.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="/tracker.js" data-site="jsonparser" defer></script>
+</body>
+</html>
